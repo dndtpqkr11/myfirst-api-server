@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sk0115-myfirst-ingress
+  namespace: class-4
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: sk0115-myfirst-ingress.class-4.skala-us.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: sk0115-myfirst-api-server
+                port:
+                  number: 8080
+  tls:
+    - hosts:
+        - sk0115-myfirst-ingress.class-4.skala-us.com
+      secretName: wildcard-class-4-skala-us-com-tls
