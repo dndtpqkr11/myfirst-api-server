@@ -6,6 +6,7 @@ namespace: class-4
 resources:
 - ../../base
 - configmap.yaml
+- ingress.yaml
 
 patches:
 - path: patch-deployment.yaml
@@ -19,4 +20,4 @@ patches:
 images:
 - name: skala-registry.skala-us.com/class-4/sk0115-webserver
   newName: skala-registry.skala-us.com/class-4/sk0115-webserver
-  newTag: 1.0-ci2-f3f98cc
+  newTag: 1.0-ci3-433a227
